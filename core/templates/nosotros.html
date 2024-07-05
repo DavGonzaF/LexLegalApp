@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% load static%}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center">Sobre Nosotros</h2>
+    <div class="row my-4">
+        <div class="col-md-6">
+            <img src="{% static 'img/oficina.jpg' %}" class="img-fluid rounded" alt="Nuestra oficina">
+        </div>
+        <div class="col-md-6">
+            <h3>Nuestra Historia</h3>
+            <p>
+                Somos una empresa de abogados con más de 20 años de experiencia en el campo legal. Nuestro compromiso es proporcionar servicios legales de alta calidad y personalizados a cada uno de nuestros clientes. 
+                Desde nuestra fundación, hemos trabajado incansablemente para defender los derechos de nuestros clientes y ofrecer soluciones legales efectivas.
+            </p>
+            <p>
+                Nuestro equipo está compuesto por profesionales altamente capacitados y con amplia experiencia en diversas áreas del derecho. Estamos dedicados a mantenernos actualizados con las últimas leyes y regulaciones para ofrecer asesoramiento legal preciso y confiable.
+            </p>
+        </div>
+    </div>
+
+    <div class="row my-4">
+        <div class="col-md-6">
+            <h3>Nuestra Misión</h3>
+            <p>
+                Nuestra misión es proporcionar soluciones legales excepcionales y eficientes a nuestros clientes. Creemos en la importancia de la integridad, la transparencia y la dedicación en cada caso que manejamos. 
+                Nos esforzamos por construir relaciones a largo plazo con nuestros clientes basadas en la confianza y el respeto mutuo.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <h3>Nuestros Valores</h3>
+            <ul>
+                <li><strong>Integridad:</strong> Actuamos con ética y honestidad en todas nuestras acciones.</li>
+                <li><strong>Compromiso:</strong> Nos dedicamos plenamente a cada caso y cliente.</li>
+                <li><strong>Excelencia:</strong> Buscamos siempre la calidad y mejora continua en nuestros servicios.</li>
+                <li><strong>Respeto:</strong> Valoramos y respetamos a nuestros clientes y sus necesidades.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row my-4">
+        <div class="col-md-12 text-center">
+            <h3>Nuestro Equipo</h3>
+            <p>Conoce a los profesionales detrás de nuestros éxitos:</p>
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="{% static 'img/harvey_specter.jpg' %}" class="img-fluid rounded-circle" alt="Miembro del equipo">
+                    <h5 class="mt-2">Nombre Apellido</h5>
+                    <p>socio Mayoritario</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="{% static 'img/mike_ross.jpg' %}" class="img-fluid rounded-circle" alt="Miembro del equipo">
+                    <h5 class="mt-2">Nombre Apellido</h5>
+                    <p>Socio Minoritario</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="{% static 'img/louis_litt.png' %}" class="img-fluid rounded-circle" alt="Miembro del equipo">
+                    <h5 class="mt-2">Nombre Apellido</h5>
+                    <p>Socio Minoritario</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="{% static 'img/jessica_pearson.png' %}" class="img-fluid rounded-circle" alt="Miembro del equipo">
+                    <h5 class="mt-2">Nombre Apellido</h5>
+                    <p>Socio Mayoritario</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
