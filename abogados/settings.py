@@ -126,12 +126,13 @@ MEDIA_ROOT = path.join(BASE_DIR, 'media')
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.ofice365.com'  
+EMAIL_HOST = 'smtp.office365.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'tu-email@gmail.com'
-EMAIL_HOST_PASSWORD = 'tu-contraseña'
+EMAIL_HOST_USER = 'tu-email@gmail.com'  # Asegúrate de usar tu dirección de correo electrónico real
+EMAIL_HOST_PASSWORD = 'tu-contraseña'  # Asegúrate de usar tu contraseña real
 DEFAULT_FROM_EMAIL = 'tu-email@gmail.com'
+
 
 
 # Default primary key field type

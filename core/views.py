@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate
 from django.core.mail import send_mail
 from django.conf import settings
+from django.urls import reverse
+from .forms import ContactForm
 
 
 def home(request):
@@ -53,16 +55,18 @@ def contact_view(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         message = request.POST.get('message')
-
-        # Send email
+        
+        # Procesar los datos (enviar correo, guardar en base de datos, etc.)
         send_mail(
-            f'Message from {name}',  # Subject
-            message,  # Message
-            email,  # From email
-            [settings.DEFAULT_FROM_EMAIL],  # To email
+            f'Mensaje de {name}', 
+            message, 
+            email, 
+            [settings.DEFAULT_FROM_EMAIL],
+            fail_silently=False,
         )
-
-        return redirect('contact')  # Redirect after POST
+        
+        # Puedes agregar lógica para mostrar un mensaje de éxito o redirigir a otra página
+        return redirect('contacto')
 
     return render(request, 'contacto.html')
 
@@ -71,3 +75,13 @@ def nosotros(request):
 
 def test(request):
     return render(request, 'test.html')
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('success'))
+    else:
+        form = ContactForm()
+    return render(request, 'contacto.html', {'form': form})
